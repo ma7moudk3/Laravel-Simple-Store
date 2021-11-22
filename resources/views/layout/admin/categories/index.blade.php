@@ -23,25 +23,30 @@
             <th width="22%">خيارات</th>
         </tr>
     </thead>
+    @foreach($categories as $category)
+
     <tbody>
         <tr>
-            <td>1</td>
-            <td>العنوان</td>
-             <td>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة...</td>
+            <td>{{$category->id}}</td>
+            <td>{{$category->name}}</td>
+             <td>{{$category->details}}</td>
             <td>
-                <img src="{{asset('a2.jpg')}}" width="120">
+                <img {{$category->image}}" width="120">
             </td>
             <td>
-                <form method='post' action='{{asset("categories/")}}'>
+                <form method='post' action=''>
                     @csrf
-                    @method("delete")
                     <a href='{{URL('admin/categories/edit')}}' class='btn btn-sm btn-primary'>تعديل</a>
-                    <a href='' class='btn btn-danger btn-sm'
-                        onclick='return confirm("Are you sure?")'>حذف</a>
+                </form>
+                <br>
+                <form method='POST' action='{{URL('admin/categories/delete/' . $category->id)}}'>
+                    @csrf
+                    <button class='btn btn-danger btn-sm' type="submit">حذف</button>
                 </form>
             </td>
         </tr>
     </tbody>
+    @endforeach
 </table>
 <!-- <div class="card mb-3" style="max-width: 1500px;">
     <div class="row no-gutters">

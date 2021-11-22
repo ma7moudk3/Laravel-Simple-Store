@@ -17,15 +17,14 @@ use Illuminate\Support\Facades\Route;
         return view('layout.admin.admin');
     });
     ///Categories
-    Route::get('admin/categories/create', function () {
-        return view('layout.admin.categories.create');
-    });
+    Route::get('admin/categories', 'App\Http\Controllers\admin\CategoriesController@index');
+    Route::post('admin/categories/store','App\Http\Controllers\admin\CategoriesController@store');
+    Route::get('admin/categories/create','App\Http\Controllers\admin\CategoriesController@create');
+    Route::post('admin/categories/delete/{id}','App\Http\Controllers\admin\CategoriesController@destroy');
     Route::get('admin/categories/edit', function () {
         return view('layout.admin.categories.edit');
     });
-    Route::get('admin/categories', function () {
-        return view('layout.admin.categories.index');
-    });
+
     ///Stores
     Route::get('admin/stores/create', function () {
         return view('layout.admin.stores.create');
