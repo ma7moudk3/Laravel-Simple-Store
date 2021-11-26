@@ -18,29 +18,39 @@
         <tr>
             <th width="5%">#</th>
             <th>عنوان</th>
-            <th>وصف قصير</th>
+            <th>اسم مالك المتجر</th>
+            <th>هاتف مالك المتجر</th>
+            <th>الموقع</th>
             <th>الصورة</th>
             <th width="22%">خيارات</th>
         </tr>
     </thead>
     <tbody>
+    @foreach($stores as $store)
         <tr>
             <td>1</td>
-            <td>العنوان</td>
-             <td>هذا النص هو مثال لنص يمكن أن يستبدل في نفس المساحة...</td>
+            <td>{{$store->name}}</td>
+             <td>{{$store->owner_name}}</td>
+             <td>{{$store->owner_phone}}</td>
+             <td>{{$store->location}}</td>
             <td>
-                <img src="{{asset('a2.jpg')}}" width="120">
+                <img src="{{$store->image}}" width="120">
             </td>
             <td>
-                <form method='post' action='{{asset("categories/")}}'>
+            <td>
+                <form method='post' action=''>
                     @csrf
-                    @method("delete")
-                    <a href='{{URL('admin/categories/edit')}}' class='btn btn-sm btn-primary'>تعديل</a>
-                    <a href='' class='btn btn-danger btn-sm'
-                        onclick='return confirm("Are you sure?")'>حذف</a>
+                    <a href='{{URL('admin/stores/edit/'.$store->id)}}' class='btn btn-sm btn-primary'>تعديل</a>
+                </form>
+                <br>
+                <form method='POST' action='{{URL('admin/stores/delete/' . $store->id)}}'>
+                    @csrf
+                    <button class='btn btn-danger btn-sm' type="submit">حذف</button>
                 </form>
             </td>
+            </td>
         </tr>
+    @endforeach
     </tbody>
 </table>
 <!-- <div class="card mb-3" style="max-width: 1500px;">

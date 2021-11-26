@@ -12,7 +12,7 @@
 @endsection
 @section("content")
     <div class="m-portlet m-portlet--mobile">
-        <form enctype='multipart/form-data' method="post" action=''>
+        <form enctype='multipart/form-data' method="post" action='{{URL('admin/stores/store')}}'>
             @csrf
             <div class='m-form'>
                 <div class="m-portlet__body">
@@ -20,29 +20,39 @@
                         <div class="form-group m-form__group row">
                             <label class="col-lg-3 col-form-label">اسم المتجر</label>
                             <div class="col-lg-6">
-                                <input id="title" value="{{ old('title') }}" name="title" placeholder="العنوان"
-                                       class="form-control" type="text">
-                            </div>
-                        </div>
-                        <div class="form-group m-form__group row">
-                            <label class="col-lg-3 col-form-label">العنوان</label>
-                            <div class="col-lg-6">
-                                <input id="slug" value="{{ old('slug') }}" name="slug" placeholder="الوصف القصير"
+                                <input id="title" name="name" placeholder="اسم المتجر"
                                        class="form-control" type="text">
                             </div>
                         </div>
                     </div>
+
+                    <div class="m-portlet__body">
+                        <div class="m-form__section m-form__section--first">
+                            <div class="form-group m-form__group row">
+                                <label class="col-lg-3 col-form-label">فئة المتجر</label>
+                                <div class="col-lg-6">
+                                    <select type="text" name="category_id" id="nationality" class="form-control">
+                                        <option value="-1"></option>
+                                        @foreach ($categories as $category)
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">اسم مالك المتجر</label>
                         <div class="col-lg-6">
-                            <input id="slug" value="{{ old('slug') }}" name="slug" placeholder="الوصف الهاتف"
+                            <input id="owner_name" name="owner_name" placeholder="اسم مالك المتجر"
                                    class="form-control" type="text">
                         </div>
                     </div>
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">رقم هاتف مالك المتجر</label>
                         <div class="col-lg-6">
-                            <input id="slug" value="{{ old('slug') }}" name="slug" placeholder="الوصف الهاتف"
+                            <input id="owner_phone"  name="owner_phone" placeholder="رقم هاتف مالك المتجر"
                                    class="form-control" type="text">
                         </div>
                     </div>
@@ -50,7 +60,7 @@
                         <label class="col-lg-3 col-form-label">التفاصيل</label>
                         <div class="col-lg-6">
                             <textarea id="details" rows='8' name="details" placeholder="أدخل التفاصيل"
-                                      class="form-control summernote">{{old("details")}}</textarea>
+                                      class="form-control summernote"></textarea>
                         </div>
                     </div>
                     <div class="form-group m-form__group row">

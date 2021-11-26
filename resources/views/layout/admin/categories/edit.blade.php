@@ -12,40 +12,40 @@
 @endsection
 @section("content")
 <div class="m-portlet m-portlet--mobile">
-    <form enctype="multipart/form-data" method='post' action="">
+    <form enctype="multipart/form-data" method='post' action="{{URL('admin/categories/update/'.$category->id)}}">
         @csrf
-        @method("put")
+{{--        @method("put")--}}
         <div class='m-form'>
             <div class="m-portlet__body">
                 <div class="m-form__section m-form__section--first">
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">العنوان</label>
                         <div class="col-lg-6">
-                            <input id="title" value="" name="title" placeholder="title"
+                            <input id="title" value="{{$category->name}}" name="name" placeholder="title"
                                 class="form-control" type="text">
                         </div>
                     </div>
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">الوصف القصير</label>
                         <div class="col-lg-6">
-                            <input id="slug" value="" name="slug"
+                            <input id="slug" value="{{$category->details}}" name="details"
                                 placeholder="الوصف القصير" class="form-control" type="text">
                         </div>
                     </div>
 
-                    <div class="form-group m-form__group row">
-                        <label class="col-lg-3 col-form-label">التفاصيل</label>
-                        <div class="col-lg-6">
-                            <textarea id="details" rows='8' style='height:350px;' name="details" placeholder="أدخل التفاصيل"
-                                class="summernote form-control"></textarea>
-                        </div>
-                    </div>
+{{--                    <div class="form-group m-form__group row">--}}
+{{--                        <label class="col-lg-3 col-form-label">التفاصيل</label>--}}
+{{--                        <div class="col-lg-6">--}}
+{{--                            <textarea id="details" rows='8' style='height:350px;' name="details" placeholder="أدخل التفاصيل"--}}
+{{--                                class="summernote form-control"></textarea>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">الصورة</label>
                         <div class="col-lg-6">
                             <input type='file' class="form-control" name="image" id="image" />
                             <hr>
-                            <img style='max-width:250px' src='{{asset("storage/images/")}}' />
+                            <img style='max-width:250px' src="{{$category->image}}" />
 
                         </div>
                     </div>
