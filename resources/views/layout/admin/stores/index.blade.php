@@ -2,7 +2,7 @@
 @section("title","إدارة المتاجر")
 
 @section("title-side")
-<a href="{{asset('admin/categories/create')}}"
+<a href="{{asset('admin/stores/create')}}"
     class="btn btn-accent m-btn m-btn--custom m-btn--pill m-btn--icon m-btn--air">
     <span>
         <i class="la la-plus"></i>

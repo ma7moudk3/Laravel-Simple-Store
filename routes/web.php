@@ -15,14 +15,14 @@ use Illuminate\Support\Facades\Route;
 
     Route::get('admin', function () {
         return view('layout.admin.admin');
-    });
+    })->middleware('auth');
     ///Categories
-    Route::get('admin/categories', 'App\Http\Controllers\admin\CategoriesController@index');
-    Route::post('admin/categories/store', 'App\Http\Controllers\admin\CategoriesController@store');
-    Route::get('admin/categories/create', 'App\Http\Controllers\admin\CategoriesController@create');
-    Route::post('admin/categories/delete/{id}', 'App\Http\Controllers\admin\CategoriesController@destroy');
-    Route::get('admin/categories/edit/{id}', 'App\Http\Controllers\admin\CategoriesController@edit');
-    Route::post('admin/categories/update/{id}', 'App\Http\Controllers\admin\CategoriesController@update');
+    Route::get('admin/categories', 'App\Http\Controllers\admin\CategoriesController@index')->middleware('auth');
+    Route::post('admin/categories/store', 'App\Http\Controllers\admin\CategoriesController@store')->middleware('auth');
+    Route::get('admin/categories/create', 'App\Http\Controllers\admin\CategoriesController@create')->middleware('auth');
+    Route::post('admin/categories/delete/{id}', 'App\Http\Controllers\admin\CategoriesController@destroy')->middleware('auth');
+    Route::get('admin/categories/edit/{id}', 'App\Http\Controllers\admin\CategoriesController@edit')->middleware('auth');
+    Route::post('admin/categories/update/{id}', 'App\Http\Controllers\admin\CategoriesController@update')->middleware('auth');
 
     ///Stores
     Route::get('admin/stores', 'App\Http\Controllers\admin\StoresController@index');
@@ -37,3 +37,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('/', function () {
         return view('welcome');
     });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'layout.admin.admin'])->name('home');

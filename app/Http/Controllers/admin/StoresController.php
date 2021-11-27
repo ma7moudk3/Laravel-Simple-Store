@@ -11,14 +11,14 @@ class StoresController extends Controller
 {
     public function create()
     {
-        $categories = Category::select('id', 'name', 'details', 'image')->get();
+        $categories = Category::select('id', 'name', 'details', 'image','created_at')->get();
         return view('layout.admin.stores.create')->with('categories',$categories);
     }
 
     public function index()
     {
         $stores = Store::get();
-        //dd($categories[0]->created_at);
+        dd($stores[0]->toArray());
         return view('layout.admin.stores.index')->with('stores', $stores);
     }
 
