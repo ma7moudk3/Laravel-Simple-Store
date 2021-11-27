@@ -87,49 +87,42 @@
                                                 </div>
                                                 <div class="m-card-user__details">
                                                     <span
-                                                        class="m-card-user__name m--font-weight-500"><h5>Admin</h5></span>
+                                                        class="m-card-user__name m--font-weight-500"><h5>{{auth()->user()->name??''}}</h5></span>
                                                     <a href="" onclick="event.preventDefault(); "
                                                        class="m-card-user__email m--font-weight-300 m-link">
-                                                        <h5>Admin@gmail.com</h5></a>
+                                                        <h5>{{auth()->user()->email??''}}</h5></a>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="m-dropdown__body">
                                             <div class="m-dropdown__content">
                                                 <ul class="m-nav m-nav--skin-light">
-                                                    <li class="m-nav__section m--hide">
-                                                        <span class="m-nav__section-text">Section</span>
-                                                    </li>
-                                                    <li class="m-nav__item">
-                                                        <a href="" class="m-nav__link">
-                                                            <i class="m-nav__link-icon flaticon-profile-1"></i>
-                                                            <span class="m-nav__link-title">
-                                                                <span class="m-nav__link-wrap">
-                                                                    <span class="m-nav__link-text"><h5>الملف الشخصي</h5></span>
-                                                                </span>
-                                                            </span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="m-nav__item">
-                                                        <a href="" class="m-nav__link">
-                                                            <i class="m-nav__link-icon flaticon-share"></i>
-                                                            <span
-                                                                class="m-nav__link-text"><h5>الرسائل</h5></span>
-                                                        </a>
-                                                    </li>
-                                                    <li class="m-nav__item">
-                                                        <a href="" class="m-nav__link">
-                                                            <i class="m-nav__link-icon flaticon-share"></i>
-                                                            <span
-                                                                class="m-nav__link-text"><h5>تغيير كلمة المرور</h5></span>
-                                                        </a>
-                                                    </li>
+{{--                                                    <li class="m-nav__section m--hide">--}}
+{{--                                                        <span class="m-nav__section-text">Section</span>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li class="m-nav__item">--}}
+{{--                                                        <a href="" class="m-nav__link">--}}
+{{--                                                            <i class="m-nav__link-icon flaticon-profile-1"></i>--}}
+{{--                                                            <span class="m-nav__link-title">--}}
+{{--                                                                <span class="m-nav__link-wrap">--}}
+{{--                                                                    <span class="m-nav__link-text"><h5>الملف الشخصي</h5></span>--}}
+{{--                                                                </span>--}}
+{{--                                                            </span>--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
+{{--                                                    <li class="m-nav__item">--}}
+{{--                                                        <a href="" class="m-nav__link">--}}
+{{--                                                            <i class="m-nav__link-icon flaticon-share"></i>--}}
+{{--                                                            <span--}}
+{{--                                                                class="m-nav__link-text"><h5>تغيير كلمة المرور</h5></span>--}}
+{{--                                                        </a>--}}
+{{--                                                    </li>--}}
                                                     <li class="m-nav__separator m-nav__separator--fit">
                                                     </li>
                                                     <li class="m-nav__item">
-                                                        <form method="POST" action="">
+                                                        <form method="POST" action="{{ route('logout') }}">
                                                             @csrf
-                                                            <a href=""
+                                                            <a href="{{ route('logout') }}"
                                                                onclick="event.preventDefault(); this.closest('form').submit();"
                                                                class="btn m-btn--pill    btn-secondary m-btn m-btn--custom m-btn--label-brand m-btn--bolder">
                                                                 <h6> تسجيل خروج</h6>

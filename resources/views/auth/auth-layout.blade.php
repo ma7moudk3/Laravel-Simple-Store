@@ -75,7 +75,7 @@ License: You must have a valid license purchased only from themeforest(the above
                 <div class="m-login__container">
                     <div class="m-login__logo">
                         <a href="#">
-                            <img src="{{asset('assets/images/dal.png')}}" style="background-color: #0b3b65;border-radius: 5%; max-width: 220px">
+                            <img src="{{asset('5865.jpg')}}" style="max-width: 340px">
                         </a>
                     </div>
                     <div class="m-login__signup">
