@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class CategoriesController extends Controller
 {
@@ -20,16 +22,19 @@ class CategoriesController extends Controller
         return view('layout.admin.categories.index')->with('categories', $categories);
     }
 
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $name = $request['name'];
-        $image = $request['image'];
         $details = $request['details'];
         $category = new Category();
         $category->name = $name;
         $category->details = $details;
-        $category->image = asset('a2.jpg');
+
+        $request['image']->store('public/images');
+        $imageName= $request->image->hashName();
+        $category->image = $imageName;
         $category->save();
+
         return redirect()->back();
     }
 
@@ -51,10 +56,12 @@ class CategoriesController extends Controller
 
         $name = $request['name'];
         $details = $request['details'];
-        $image = $request['image'];
         $category = Category::where('id', $id)->first();
         $category->name = $name;
-       // $category->image = $image;
+
+        $request['image']->store('public/images');
+        $imageName= $request->image->hashName();
+        $category->image = $imageName;
         $category->details = $details;
         $category->save();
         return redirect()->back();

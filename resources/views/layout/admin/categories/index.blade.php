@@ -32,7 +32,7 @@
              <td>{{$category->created_at}}</td>
 {{--             <td>{{$category->details}}</td>--}}
             <td>
-                <img src="{{$category->image}}" width="90">
+                <img src="{{ asset('storage/images/'.$category->image)}}" width="90">
             </td>
             <td>
                 <form method='post' action=''>
