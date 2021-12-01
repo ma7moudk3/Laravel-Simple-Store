@@ -33,15 +33,12 @@ use Illuminate\Support\Facades\Route;
         return view('layout.admin.stores.edit');
     });
 
-Route::get('website', function () {
-    return view('layout.website.index');
-});
-
-
-    Route::get('/', function () {
-        return view('layout.website.index');
-    });
+////////////////
+Route::get('/', 'App\Http\Controllers\website\HomeController@create');
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'layout.admin.admin'])->name('home');
+Route::get('product/details', function () {
+    return view('layout.website.product-detail');
+});

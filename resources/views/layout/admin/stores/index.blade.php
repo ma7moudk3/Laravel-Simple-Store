@@ -34,7 +34,7 @@
              <td>{{$store->owner_phone}}</td>
              <td>{{$store->location}}</td>
             <td>
-                <img src="{{$store->image}}" width="120">
+                <img src="{{ asset('storage/images/'.$store->image)}}" width="120">
             </td>
             <td>
             <td>
@@ -47,7 +47,6 @@
                     @csrf
                     <button class='btn btn-danger btn-sm' type="submit">حذف</button>
                 </form>
-            </td>
             </td>
         </tr>
     @endforeach
