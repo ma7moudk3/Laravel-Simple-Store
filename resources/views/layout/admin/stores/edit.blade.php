@@ -12,7 +12,7 @@
 @endsection
 @section("content")
 <div class="m-portlet m-portlet--mobile">
-    <form enctype="multipart/form-data" method='post' action="">
+    <form enctype="multipart/form-data" method='post' action="{{url('admin/stores/update/'.$store->id)}}">
         @csrf
         <div class='m-form'>
             <div class="m-portlet__body">
@@ -20,14 +20,14 @@
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">العنوان</label>
                         <div class="col-lg-6">
-                            <input id="title" value="{{$store->name}}" name="title" placeholder="title"
+                            <input id="title" value="{{$store->name}}" name="name" placeholder="title"
                                 class="form-control" type="text" >
                         </div>
                     </div>
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">الوصف القصير</label>
                         <div class="col-lg-6">
-                            <input id="slug" value="{{$store->details}}" name="slug"
+                            <input id="slug" value="{{$store->details}}" name="details"
                                 placeholder="الوصف القصير" class="form-control" type="text">
                         </div>
                     </div>

@@ -59,7 +59,7 @@
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">الوصف القصير</label>
                         <div class="col-lg-6">
-                            <input id="slug" value="{{$store->name}}" name="details"
+                            <input id="slug" name="details"
                                    placeholder="الوصف القصير" class="form-control" type="text">
                         </div>
                     </div>
