@@ -6,8 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoresRequest;
 use App\Models\Category;
 use App\Models\Store;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
 
 class StoresController extends Controller
 {

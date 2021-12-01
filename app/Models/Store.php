@@ -10,4 +10,9 @@ class Store extends Model
 {
     use HasFactory;
     use SoftDeletes;
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }

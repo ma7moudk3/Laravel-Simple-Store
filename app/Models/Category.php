@@ -11,4 +11,8 @@ class Category extends Model
     use HasFactory;
     use SoftDeletes;
     public $timestamps = true;
+
+    public function store(){
+        return $this->hasMany('App\Models\Category');
+    }
 }
