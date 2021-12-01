@@ -57,12 +57,13 @@
                         </div>
                     </div>
                     <div class="form-group m-form__group row">
-                        <label class="col-lg-3 col-form-label">التفاصيل</label>
+                        <label class="col-lg-3 col-form-label">الوصف القصير</label>
                         <div class="col-lg-6">
-                            <textarea id="details" rows='8' name="details" placeholder="أدخل التفاصيل"
-                                      class="form-control summernote"></textarea>
+                            <input id="slug" value="{{$store->name}}" name="details"
+                                   placeholder="الوصف القصير" class="form-control" type="text">
                         </div>
                     </div>
+
                     <div class="form-group m-form__group row">
                         <label class="col-lg-3 col-form-label">الصورة</label>
                         <div class="col-lg-6">

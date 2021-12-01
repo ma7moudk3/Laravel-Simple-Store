@@ -50,6 +50,13 @@ class StoresController extends Controller
     }
 
 
+    public function edit($id)
+    {
+        $categories = Category::select('id', 'name', 'details', 'image','created_at')->get();
+        $store = Store::select("*")->where('id',$id)->first();
+        return view('layout.admin.stores.edit')->with('store',$store)->with('categories',$categories);
+    }
+
     public function update(StoresRequest $request)
     {
         $name = $request['name'];

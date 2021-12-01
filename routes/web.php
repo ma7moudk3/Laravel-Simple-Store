@@ -29,9 +29,7 @@ use Illuminate\Support\Facades\Route;
     Route::get('admin/stores/create', 'App\Http\Controllers\admin\StoresController@create');
     Route::post('admin/stores/store', 'App\Http\Controllers\admin\StoresController@store');
     Route::post('admin/stores/delete/{id}', 'App\Http\Controllers\admin\StoresController@destroy');
-    Route::get('admin/stores/edit', function () {
-        return view('layout.admin.stores.edit');
-    });
+    Route::post('admin/stores/edit/{id}','App\Http\Controllers\admin\StoresController@edit' );
 
 ////////////////
 Route::get('/', 'App\Http\Controllers\website\HomeController@create');

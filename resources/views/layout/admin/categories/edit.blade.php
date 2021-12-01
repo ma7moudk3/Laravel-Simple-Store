@@ -45,7 +45,7 @@
                         <div class="col-lg-6">
                             <input type='file' class="form-control" name="image" id="image" />
                             <hr>
-                            <img style='max-width:250px' src="{{$category->image}}" />
+                            <img style='max-width:250px' src="{{ asset('storage/images/'.$category->image)}}" />
 
                         </div>
                     </div>
