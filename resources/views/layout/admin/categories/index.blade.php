@@ -49,4 +49,7 @@
     </tbody>
     @endforeach
 </table>
+<div>
+    {{$categories->links('pagination::bootstrap-4')}}
+</div>
 @endsection

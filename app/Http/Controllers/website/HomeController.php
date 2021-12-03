@@ -21,4 +21,9 @@ class HomeController extends Controller
         $stores = Store::where('category_id',$id)->select('*')->get();
         return view('layout.website.stores')->with('stores',$stores);
     }
+
+    public function productDetails($id){
+        $store = Store::select("*")->where('id',$id)->first();
+        return view('layout.website.product-detail')->with('store',$store);
+    }
 }

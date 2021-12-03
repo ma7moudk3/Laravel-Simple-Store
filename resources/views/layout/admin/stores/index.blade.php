@@ -51,7 +51,11 @@
         </tr>
     @endforeach
     </tbody>
+
 </table>
+<div>
+    {{$stores->links('pagination::bootstrap-4')}}
+</div>
 <!-- <div class="card mb-3" style="max-width: 1500px;">
     <div class="row no-gutters">
         <div class="col-md-4">

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoresRequest;
 use App\Models\Category;
 use App\Models\Store;
+use Illuminate\Http\Request;
 
 class StoresController extends Controller
 {
@@ -15,9 +16,9 @@ class StoresController extends Controller
         return view('layout.admin.stores.create')->with('categories',$categories);
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        $stores = Store::get();
+        $stores = Store::paginate(5);
         return view('layout.admin.stores.index')->with('stores', $stores);
     }
 

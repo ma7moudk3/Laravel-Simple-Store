@@ -35,6 +35,7 @@ use Illuminate\Support\Facades\Route;
 ////////////////
 Route::get('/', 'App\Http\Controllers\website\HomeController@create');
 Route::get('category/products/{id}', 'App\Http\Controllers\website\HomeController@storesIndex');
+Route::get('product/{id}', 'App\Http\Controllers\website\HomeController@productDetails');
 
 Auth::routes();
 

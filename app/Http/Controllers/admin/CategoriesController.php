@@ -17,7 +17,7 @@ class CategoriesController extends Controller
 
     public function index()
     {
-        $categories = Category::select('id', 'name', 'details', 'image','created_at')->get();
+        $categories = Category::select('id', 'name', 'details', 'image','created_at')->paginate(5);
         //dd($categories[0]->created_at);
         return view('layout.admin.categories.index')->with('categories', $categories);
     }

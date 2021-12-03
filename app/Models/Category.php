@@ -12,7 +12,7 @@ class Category extends Model
     use SoftDeletes;
     public $timestamps = true;
 
-    public function store(){
-        return $this->hasMany('App\Models\Category');
-    }
+//    public function store(){
+//        return $this->hasMany('App\Models\Category');
+//    }
 }
