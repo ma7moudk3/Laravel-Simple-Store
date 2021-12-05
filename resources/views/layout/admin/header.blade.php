@@ -6,7 +6,7 @@
             <div class="m-stack__item m-brand  m-brand--skin-dark ">
                 <div class="m-stack m-stack--ver m-stack--general">
                     <div class="m-stack__item m-stack__item--middle m-brand__logo">
-                        <a href="index.html" class="m-brand__logo-wrapper">
+                        <a href="{{URL('')}}" class="m-brand__logo-wrapper">
                             <img alt="a"
                                  src="{{asset('online-shopping.png')}}" style="max-width: 40px"/>
                         </a>
@@ -97,26 +97,6 @@
                                         <div class="m-dropdown__body">
                                             <div class="m-dropdown__content">
                                                 <ul class="m-nav m-nav--skin-light">
-{{--                                                    <li class="m-nav__section m--hide">--}}
-{{--                                                        <span class="m-nav__section-text">Section</span>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__item">--}}
-{{--                                                        <a href="" class="m-nav__link">--}}
-{{--                                                            <i class="m-nav__link-icon flaticon-profile-1"></i>--}}
-{{--                                                            <span class="m-nav__link-title">--}}
-{{--                                                                <span class="m-nav__link-wrap">--}}
-{{--                                                                    <span class="m-nav__link-text"><h5>الملف الشخصي</h5></span>--}}
-{{--                                                                </span>--}}
-{{--                                                            </span>--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
-{{--                                                    <li class="m-nav__item">--}}
-{{--                                                        <a href="" class="m-nav__link">--}}
-{{--                                                            <i class="m-nav__link-icon flaticon-share"></i>--}}
-{{--                                                            <span--}}
-{{--                                                                class="m-nav__link-text"><h5>تغيير كلمة المرور</h5></span>--}}
-{{--                                                        </a>--}}
-{{--                                                    </li>--}}
                                                     <li class="m-nav__separator m-nav__separator--fit">
                                                     </li>
                                                     <li class="m-nav__item">

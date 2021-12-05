@@ -31,11 +31,15 @@ use Illuminate\Support\Facades\Route;
     Route::post('admin/stores/delete/{id}', 'App\Http\Controllers\admin\StoresController@destroy');
     Route::get('admin/stores/edit/{id}','App\Http\Controllers\admin\StoresController@edit' );
     Route::post('admin/stores/update/{id}','App\Http\Controllers\admin\StoresController@update');
+    /// Rating
+    Route::post('stores/rating/store/{id}','App\Http\Controllers\website\RatingController@store');
+
 
 ////////////////
 Route::get('/', 'App\Http\Controllers\website\HomeController@create');
 Route::get('category/products/{id}', 'App\Http\Controllers\website\HomeController@storesIndex');
 Route::get('product/{id}', 'App\Http\Controllers\website\HomeController@productDetails');
+Route::get('category/{id}', 'App\Http\Controllers\website\HomeController@storesIndexPeerCategory');
 
 Auth::routes();
 

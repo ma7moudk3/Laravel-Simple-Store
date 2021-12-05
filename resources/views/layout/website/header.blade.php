@@ -9,7 +9,7 @@
 
                 <!-- Logo desktop -->
                 <a href="#" class="logo">
-                    <a href="index.html"><img src="{{asset('website_style/images/icons/logo-01.png')}}" alt="IMG-LOGO"></a>
+                    <a href="{{URL('')}}"><img src="{{asset('website_style/images/icons/logo-01.png')}}" alt="IMG-LOGO"></a>
                 </a>
 
                 <!-- Icon header -->
