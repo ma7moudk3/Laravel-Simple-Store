@@ -38,7 +38,9 @@
                     <h4 class="mtext-105 cl2 js-name-detail p-b-14">
                         {{$store->name}}
                     </h4>
-
+                    <h5 class="mtext-90 cl2 js-name-detail p-b-14">
+                        {{$store->category->name}}
+                    </h5>
                     {{--                    <span class="mtext-106 cl2">--}}
                     {{--							$58.79--}}
                     {{--						</span>--}}
@@ -48,7 +50,7 @@
                     </p>
                     <br>
                     <br>
-                    
+
                     <h4>
                         {{$store->rating_avg}}
                     </h4>

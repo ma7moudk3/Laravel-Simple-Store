@@ -40,6 +40,7 @@ Route::get('/', 'App\Http\Controllers\website\HomeController@create');
 Route::get('category/products/{id}', 'App\Http\Controllers\website\HomeController@storesIndex');
 Route::get('product/{id}', 'App\Http\Controllers\website\HomeController@productDetails');
 Route::get('category/{id}', 'App\Http\Controllers\website\HomeController@storesIndexPeerCategory');
+Route::get('storesSearch', 'App\Http\Controllers\website\HomeController@search');
 
 Auth::routes();
 
