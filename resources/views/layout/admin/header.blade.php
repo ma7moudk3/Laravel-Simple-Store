@@ -69,7 +69,7 @@
                                 m-dropdown-toggle="click">
                                 <a href="#" class="m-nav__link m-dropdown__toggle">
                                     <span class="m-topbar__userpic">
-                                            <img src="{{asset('metronic/assets/app/media/img/users/user.png')}}" alt="">
+                                            <img src="{{asset('profile.jpg')}}" alt="">
                                     </span>
                                 </a>
                                 <div class="m-dropdown__wrapper">
@@ -82,7 +82,7 @@
                                             <div class="m-card-user m-card-user--skin-dark">
                                                 <div class="m-card-user__pic">
                                                     <img
-                                                        src="{{asset('metronic/assets/app/media/img/users/user.png')}}"
+                                                        src="{{asset('profile.jpg')}}"
                                                         class="rounded m--marginless" alt="" width="20px"/>
                                                 </div>
                                                 <div class="m-card-user__details">

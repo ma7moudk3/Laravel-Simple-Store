@@ -16,7 +16,7 @@ class StoresController extends Controller
         return view('layout.admin.stores.create')->with('categories',$categories);
     }
 
-    public function index(Request $request)
+    public function index()
     {
         $stores = Store::paginate(5);
         return view('layout.admin.stores.index')->with('stores', $stores);
@@ -74,6 +74,11 @@ class StoresController extends Controller
         $store->image = $imageName;
         $store->save();
         return redirect()->back();
+    }
+
+    public function indexRatings(){
+        $stores = Store::select('*')->get();
+        return view('layout.admin.stores.ratings')->with('stores', $stores);
     }
 
 

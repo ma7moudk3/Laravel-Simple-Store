@@ -108,7 +108,7 @@
                                 </a>
 
                                 <span class="stext-105 cl3">
-									{{$store->category->name}}{{$store->category->name}}
+									{{$store->category->name}}
 								</span>
                             </div>
 

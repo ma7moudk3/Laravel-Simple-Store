@@ -26,6 +26,7 @@ use Illuminate\Support\Facades\Route;
 
     ///Stores
     Route::get('admin/stores', 'App\Http\Controllers\admin\StoresController@index');
+    Route::get('admin/stores/ratings', 'App\Http\Controllers\admin\StoresController@indexRatings');
     Route::get('admin/stores/create', 'App\Http\Controllers\admin\StoresController@create');
     Route::post('admin/stores/store', 'App\Http\Controllers\admin\StoresController@store');
     Route::post('admin/stores/delete/{id}', 'App\Http\Controllers\admin\StoresController@destroy');

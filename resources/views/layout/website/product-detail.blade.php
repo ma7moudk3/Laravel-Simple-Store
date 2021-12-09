@@ -52,7 +52,19 @@
                     <br>
 
                     <h4>
+{{--                        {{'Rating Average '.$store->rating_avg}}--}}
+                        @if($store->rating_avg > 0)
+                        @for ($i = 0; $i < $store->rating_avg ; $i++)
+                            <i class="zmdi zmdi-star"></i>
+                        @endfor
                         {{$store->rating_avg}}
+                        @else
+                            <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                            <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                            <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                            <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                            <i class="item-rating pointer zmdi zmdi-star-outline"></i>
+                        @endif
                     </h4>
                 </div>
 
