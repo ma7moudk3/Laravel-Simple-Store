@@ -58,7 +58,6 @@ class CategoriesController extends Controller
         $details = $request['details'];
         $category = Category::where('id', $id)->first();
         $category->name = $name;
-
         $request['image']->store('public/images');
         $imageName= $request->image->hashName();
         $category->image = $imageName;
